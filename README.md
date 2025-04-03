@@ -1,14 +1,9 @@
-# apply_track
+# jobs_tracker
 
-This template should help get you started developing with Vue 3 in Vite.
+Create an intuitive web application that helps job seekers manage their applications easily, visualize their progress, and stay organized.
 
 ## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
 
 ## Project Setup
 

@@ -19,7 +19,7 @@
 
       <div class="flex-1 overflow-y-auto px-6 py-4">
         <div class="mb-6 flex flex-wrap items-center gap-4">
-          <span class="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800"> Applied </span>
+          <span class="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800"> {{ job.stage }} </span>
           <div class="flex items-center text-sm text-gray-600">
             <svg xmlns="http://www.w3.org/2000/svg" class="mr-1 h-4 w-4" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
@@ -108,7 +108,4 @@ const props = defineProps(["visible","job"])
 
 const emit = defineEmits(['close']);
 const close = () => emit('close');
-
-
-
 </script>

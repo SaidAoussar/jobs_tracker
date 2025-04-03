@@ -56,10 +56,10 @@ export const useJobStore = defineStore('jobStore', {
 
     stats: (state) => {
       return {
-        applied: state.jobs.filter((j) => j.status === "Applied").length,
-        interviewing: state.jobs.filter((j) => j.status === "Interviewing").length,
-        offers: state.jobs.filter((j) => j.status === "Offer").length,
-        rejected: state.jobs.filter((j) => j.status === "Rejected").length,
+        applied: state.jobs.filter((j) => j.stage === "Applied").length,
+        interview: state.jobs.filter((j) => j.stage === "Interview").length,
+        offers: state.jobs.filter((j) => j.stage === "Offer").length,
+        rejected: state.jobs.filter((j) => j.stage === "Rejected").length,
       };
     },
   

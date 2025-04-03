@@ -45,7 +45,7 @@
         </div>
         <div>
           <p class="text-sm font-medium text-gray-500">Interviewing</p>
-          <p class="text-2xl font-bold text-gray-800">{{ stats.interviewing }}</p>
+          <p class="text-2xl font-bold text-gray-800">{{ stats.interview }}</p>
         </div>
       </div>
     </div>
@@ -97,10 +97,6 @@
   </div>
 </template>
 <script setup>
-import { ref } from 'vue';
-import {
-  Calendar,Edit,Trash2
-} from 'lucide-vue-next';
 import { useJobStore } from "@/stores/jobStore";
 import { Pie } from 'vue-chartjs'
 import {
@@ -121,13 +117,13 @@ const jobStore = useJobStore();
 
 const total = jobStore.totalApplications;
 const chartData = computed(() => ({
-  labels: ['Applied','Interviewing','Offers','Rejected'],
+  labels: ['Applied','Interview','Offers','Rejected'],
   datasets: [
     {
       label: 'Applications',
       data: [
         stats.value.applied,
-        stats.value.interviewing,
+        stats.value.interview,
         stats.value.offers,
         stats.value.rejected
       ],
@@ -146,69 +142,7 @@ const chartOptions = {
 }
 
 
-const recentApplications = ref([
-  {
-    company: 'TechCorp Inc.',
-    logo: 'https://randomuser.me/api/portraits/men/1.jpg',
-    location: 'San Francisco, CA',
-    position: 'Frontend Developer',
-    type: 'Full-time',
-    date: 'May 4, 2023',
-    status: 'Interview'
-  },
-  {
-    company: 'Design Studios',
-    logo: 'https://randomuser.me/api/portraits/women/2.jpg',
-    location: 'Remote',
-    position: 'UX Designer',
-    type: 'Contract',
-    date: 'May 2, 2023',
-    status: 'Pending'
-  },
-  {
-    company: 'Startup Hub',
-    logo: 'https://randomuser.me/api/portraits/men/3.jpg',
-    location: 'New York, NY',
-    position: 'Product Manager',
-    type: 'Full-time',
-    date: 'April 28, 2023',
-    status: 'Rejected'
-  },
-  {
-    company: 'Global Tech',
-    logo: 'https://randomuser.me/api/portraits/women/4.jpg',
-    location: 'Austin, TX',
-    position: 'Software Engineer',
-    type: 'Full-time',
-    date: 'April 25, 2023',
-    status: 'Applied'
-  },
-  {
-    company: 'Creative Agency',
-    logo: 'https://randomuser.me/api/portraits/men/5.jpg',
-    location: 'Chicago, IL',
-    position: 'UI Developer',
-    type: 'Part-time',
-    date: 'April 20, 2023',
-    status: 'Interview'
-  }
-]);
 
 
-const getStatusClass = (status) => {
-  switch (status) {
-    case 'Applied':
-      return 'bg-gray-100 text-gray-800';
-    case 'Pending':
-      return 'bg-amber-100 text-amber-800';
-    case 'Interview':
-      return 'bg-primary/10 text-primary';
-    case 'Rejected':
-      return 'bg-red-100 text-red-800';
-    case 'Offer':
-      return 'bg-green-100 text-green-800';
-    default:
-      return 'bg-gray-100 text-gray-800';
-  }
-};
+
 </script>

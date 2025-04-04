@@ -27,7 +27,7 @@ This application helps job seekers track their job applications efficiently. Use
 
 | Part        | URL                                                                                                         |
 |-------------|-------------------------------------------------------------------------------------------------------------|
-| 🖥 Frontend | [[https://ng-ecomm.vercel.app](https://ng-ecomm.vercel.app)](https://jobs-tracker-mu.vercel.app/)           |
+| 🖥 Frontend | [https://jobs-tracker-mu.vercel.app](https://jobs-tracker-mu.vercel.app/)                                   |
 
 
 ### **Requirements**
@@ -63,4 +63,4 @@ npm install
 npm run dev
 ```
 
-5.  Open your browser and navigate to **` http://localhost:4200/`**
+5.  Open your browser and navigate to **` http://localhost:5173/`**

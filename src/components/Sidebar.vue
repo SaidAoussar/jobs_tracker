@@ -7,20 +7,25 @@
     </div>
     <nav class="mt-4 px-2">
       <router-link to="/" class="mb-1 flex items-center rounded-lg px-4 py-2" active-class="bg-primary/10 text-primary">
-        <layout-dashboard class="mr-3 h-5 w-5" />
-        <span>Dashboard</span>
+        <ChartArea class="mr-3 h-5 w-5" />
+        <span>Stats</span>
       </router-link>
-      <router-link to="/applications" class="mb-1 flex items-center rounded-lg px-4 py-2"
+      <router-link to="/list" class="mb-1 flex items-center rounded-lg px-4 py-2"
         active-class="bg-primary/10 text-primary">
-        <briefcase class="mr-3 h-5 w-5" />
+        <LayoutList class="mr-3 h-5 w-5" />
         <span>Applications</span>
+      </router-link>
+      <router-link to="/board" class="mb-1 flex items-center rounded-lg px-4 py-2"
+        active-class="bg-primary/10 text-primary">
+        <layout-dashboard class="mr-3 h-5 w-5" />
+        <span>Jobs board</span>
       </router-link>
     </nav>
   </div>
 </template>
 <script setup>
 import {
-  LayoutDashboard,Briefcase
+  LayoutDashboard,LayoutList,ChartArea
 } from 'lucide-vue-next';
 
 import { sidebarOpen } from '../stores/sidebarState.js'

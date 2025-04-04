@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import { mount } from '@vue/test-utils'
-import AddJobModal from '@/components/AddJobModal.vue'
+import AddJobModal from '@/components/JobFormModal.vue'
 
 describe('AddJobModal.vue', () => {
   let wrapper

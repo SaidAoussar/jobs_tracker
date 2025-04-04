@@ -62,6 +62,31 @@ export const useJobStore = defineStore('jobStore', {
         rejected: state.jobs.filter((j) => j.stage === "Rejected").length,
       };
     },
-  
+
+    // Search jobs by company, jobTitle, or techStack and filter by stage
+    filterJobs: (state) => (query, stage) => {    
+      const terms = query
+        .toLowerCase()
+        .split(',')
+        .map(term => term.trim())
+        .filter(Boolean);
+
+        console.log(query, stage);
+    
+      return state.jobs.filter(job => {
+        const companyMatch = job.company?.toLowerCase().includes(query.toLowerCase());
+        const titleMatch = job.jobTitle?.toLowerCase().includes(query.toLowerCase());
+    
+        const techStackMatch = Array.isArray(job.techStack)
+          ? terms.some(term =>
+              job.techStack.some(tech => tech.toLowerCase().includes(term))
+            )
+          : false;
+        
+        const matchStage = !stage || job.stage === stage;
+    
+        return (companyMatch || titleMatch || techStackMatch) && matchStage;
+      });
+    },
   }
 });

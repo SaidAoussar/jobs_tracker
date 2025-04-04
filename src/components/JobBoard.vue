@@ -22,25 +22,25 @@
     <div class="fixed bottom-6 right-6">
       <button
         class="bg-blue-600 hover:bg-blue-700 text-white p-4 rounded-full shadow-lg flex items-center justify-center cursor-pointer"
-        @click="showAddModal = true">
+        @click="showJobFormModal = true">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
         </svg>
       </button>
     </div>
   </div>
-  <AddJobModal :visible="showAddModal" @close="showAddModal = false" @submit="handleAddJob" />
+  <JobFormModal :visible="showJobFormModal" @close="showJobFormModal = false" @submit="handleJobFormSubmit" />
 </template>
 
 <script setup>
 import JobColumn from './JobColumn.vue';
-import AddJobModal from './AddJobModal.vue';
+import JobFormModal from './JobFormModal.vue';
 
 import { useJobStore } from '@/stores/jobStore';
 import { ref } from 'vue';
 
 const jobStore = useJobStore();
-const showAddModal = ref(false);
+const showJobFormModal = ref(false);
 const searchQuery = ref('');
 
 
@@ -49,7 +49,7 @@ const handleJobDropped = ({ jobId,newStage }) => {
   jobStore.moveJob(jobId,newStage);
 };
 
-const handleAddJob = (jobData) => {
+const handleJobFormSubmit = (jobData) => {
   jobStore.addJob(jobData);
 };
 

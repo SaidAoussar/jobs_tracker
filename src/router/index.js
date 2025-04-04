@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import JobBoard from '@/components/JobBoard.vue'
-import Dashboard from '@/components/Dashboard.vue'
+import Stats from '@/components/Stats.vue'
+import JobTable from '@/components/JobTable.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -8,12 +9,17 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: Dashboard,
+      component: Stats,
     },
     {
-      path: '/applications',
-      name: 'applications',
+      path: '/board',
+      name: 'board',
       component: JobBoard,
+    },
+    {
+      path: '/list',
+      name: 'list',
+      component: JobTable,
     },
   ],
 })

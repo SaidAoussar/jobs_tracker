@@ -1,7 +1,11 @@
 <script setup>
-import { RouterLink,RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import Sidebar from "@/components/Sidebar.vue"
 import TopNaviation from "@/components/TopNaviation.vue"
+import { useJobStore } from '@/stores/jobStore';
+
+const jobStore = useJobStore();
+jobStore.seedFakeJobs();
 </script>
 
 <template>

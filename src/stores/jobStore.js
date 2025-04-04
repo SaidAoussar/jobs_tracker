@@ -1,4 +1,6 @@
 import { defineStore } from "pinia";
+import { jobs as mockJobs } from '../../mock-data/jobs';
+
 
 
 const STORAGE_KEY = 'jobtracker.jobs';
@@ -45,6 +47,14 @@ export const useJobStore = defineStore('jobStore', {
       this.jobs = this.jobs.filter((job) => job.id !== id);
       this.persist();
     },
+    seedFakeJobs() {
+      const stored = localStorage.getItem(STORAGE_KEY);
+
+      if (stored === null) {
+        this.jobs = mockJobs;
+        this.persist();
+      }
+    }
   },
 
   getters:{
